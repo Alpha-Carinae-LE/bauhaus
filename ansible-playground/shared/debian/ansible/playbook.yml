@@ -1,8 +1,17 @@
 ---
-# this playbook loads the example role common
+- hosts: nodes
 
-- name: Apply Basic Tools
-  hosts: nodes
-  remote_user: root
-  roles:
-    - common
+  tasks:
+    - name: Update cache
+      apt:
+        update_cache: yes
+        cache_valid_time: 3600
+      become: true
+
+    - name: Remove unwanted packages
+      become: true
+      import_tasks: tasks/apt-remove.yml
+
+    - name: Install required packages
+      become: true
+      import_tasks: tasks/apt-install.yml

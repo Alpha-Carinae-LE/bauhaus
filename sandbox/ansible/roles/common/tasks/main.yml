@@ -1,0 +1,7 @@
+---
+- name: Gather Facts with custom variable
+  include_tasks: ./all/facts.yml
+
+- name: Install distribution-specific packages
+  include_tasks: "{{ server.distribution }}/main.yml"
+...

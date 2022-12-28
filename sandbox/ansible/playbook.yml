@@ -1,0 +1,10 @@
+---
+- hosts: nodes
+  collections:
+    - community.general.pacman
+    - kewlfft.aur
+  tasks:
+    - name: Gather Custom Facts
+      include_role:
+        name: common
+...
