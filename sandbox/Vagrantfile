@@ -9,13 +9,13 @@ ENV["LC_ALL"] = "en_US.UTF-8"
 boxes = [
     {
         :name => "calvin",
-        :cpus => "4",
-        :memory => "4096",
+        :cpus => "6",
+        :memory => "8192",
         :address => "192.168.56.21"
     },
     {
         :name => "hobbes",
-        :cpus => "4",
+        :cpus => "2",
         :memory => "4096",
         :address => "192.168.56.22"
     }

@@ -95,6 +95,34 @@ vm-suspend:
 vm-up:
 	@vagrant up
 
+.PHONY: vm-snapshot-save
+vm-snapshot-save:
+	@vagrant snapshot save latest
+
+.PHONY: vm-snapshot-restore
+vm-snapshot-restore:
+	@vagrant snapshot restore latest
+
+.PHONY: vm-snapshot-remove
+vm-snapshot-remove:
+	@vagrant snapshot delete latest
+
+.PHONY: vm-snapshot-save-wip
+vm-snapshot-save-wip:
+	@vagrant snapshot save wip
+
+.PHONY: vm-snapshot-restore-wip
+vm-snapshot-restore-wip:
+	@vagrant snapshot restore wip
+
+.PHONY: vm-snapshot-remove-wip
+vm-snapshot-remove-wip:
+	@vagrant snapshot delete wip
+
+.PHONY: vm-snapshot-list
+vm-snapshot-list:
+	@vagrant snapshot list
+
 .PHONY: vm-forget
 vm-forget: alpine-forget arch-forget debian-forget rocky-forget jammy-forget
 
