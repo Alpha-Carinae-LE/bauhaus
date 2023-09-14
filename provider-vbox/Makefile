@@ -32,9 +32,9 @@ vf-ubuntu:
 .PHONY: vg-box-add
 vg-box-add:
 	@vagrant box add generic/arch --provider=virtualbox --force
-	@vagrant box add debian/bullseye64 --provider=virtualbox --force
+	@vagrant box add generic/debian11 --provider=virtualbox --force
 	@vagrant box add generic/rocky8  --provider=virtualbox --force
-	@vagrant box add ubuntu/jammy64 --provider=virtualbox --force
+	@vagrant box add bento/ubuntu-22.04 --provider=virtualbox --force
 
 .PHONY: vm-box-check
 vg-box-check:

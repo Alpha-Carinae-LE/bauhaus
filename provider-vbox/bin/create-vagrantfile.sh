@@ -118,7 +118,7 @@ boxes = [
 ]
 
 Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
-  config.vm.box = "debian/bullseye64"
+  config.vm.box = "generic/debian11"
   config.ssh.forward_agent = true
   boxes.each do |vars|
     config.vm.define vars[:name] do |machine|
@@ -269,7 +269,7 @@ boxes = [
 ]
 
 Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
-  config.vm.box = "ubuntu/jammy64"
+  config.vm.box = "bento/ubuntu-22.04"
   config.ssh.forward_agent = true
   boxes.each do |vars|
     config.vm.define vars[:name] do |machine|

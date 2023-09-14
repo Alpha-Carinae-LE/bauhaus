@@ -35,11 +35,11 @@ vf-ubuntu:
 ##########################################
 .PHONY: vm-box-add
 vm-box-add:
-	@vagrant box add generic/alpine316 --provider=virtualbox --force
-	@vagrant box add generic/arch --provider=virtualbox --force
-	@vagrant box add debian/bullseye64 --provider=virtualbox --force
-	@vagrant box add generic/rocky8  --provider=virtualbox --force
-	@vagrant box add ubuntu/jammy64 --provider=virtualbox --force
+	@vagrant box add generic/alpine38 --provider=libvirt --force
+	@vagrant box add generic/arch --provider=libvirt --force
+	@vagrant box add generic/debian11 --provider=libvirt --force
+	@vagrant box add generic/rocky8  --provider=libvirt --force
+	@vagrant box add bento/ubuntu-22.04 --provider=libvirt --force
 
 .PHONY: vm-box-check
 vm-box-check:
