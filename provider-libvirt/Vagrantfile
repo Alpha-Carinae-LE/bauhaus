@@ -9,8 +9,8 @@ ENV["LC_ALL"] = "en_US.UTF-8"
 boxes = [
     {
         :name => "calvin",
-        :cpus => "6",
-        :memory => "8192",
+        :cpus => "2",
+        :memory => "4096",
         :address => "192.168.56.21"
     },
     {
@@ -27,12 +27,10 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   boxes.each do |vars|
     config.vm.define vars[:name] do |machine|
       machine.vm.hostname = vars[:name]
-      machine.vm.provider :virtualbox do |vb|
-        vb.name = vars[:name]
-        vb.customize ["modifyvm", :id, "--memory", vars[:memory]]
-        vb.customize ["modifyvm", :id, "--cpus", vars[:cpus]]
-        vb.customize ["modifyvm", :id, "--ioapic", "on"]
-        vb.customize ["modifyvm", :id, "--natdnsproxy1", "on"]
+      machine.vm.provider "libvirt" do |lbv|
+        lbv.driver = "kvm"
+        lbv.memory = vars[:memory]
+        lbv.cpus= vars[:cpus]
       end
       machine.vm.network :private_network, ip: vars[:address]
       machine.vm.synced_folder ".", "/vagrant", disabled: true
