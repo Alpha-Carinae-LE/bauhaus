@@ -11,14 +11,12 @@ boxes = [
         :name => "calvin",
         :cpus => "2",
         :memory => "4096",
-        :disksize => "20GB",
         :address => "192.168.56.21"
     },
     {
         :name => "hobbes",
         :cpus => "2",
         :memory => "4096",
-        :disksize => "20GB",
         :address => "192.168.56.22"
     }
 ]
@@ -29,9 +27,8 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   boxes.each do |vars|
     config.vm.define vars[:name] do |machine|
       machine.vm.hostname = vars[:name]
-      machine.vm.disk :disk, size: vars[:disksize], primary: true
       machine.vm.provider "libvirt" do |lbv|
-        lbv.driver = "kvm"
+        lbv.driver = "qemu"
         lbv.memory = vars[:memory]
         lbv.cpus = vars[:cpus]
       end
