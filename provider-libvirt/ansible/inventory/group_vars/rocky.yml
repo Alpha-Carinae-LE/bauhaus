@@ -1,7 +1,7 @@
 ---
 server:
     distribution: "rocky"
-    version: "8.6"
-    pretty_name: "Rocky Linux 8.6 (Green Obsidian)"
+    version: "9.2"
+    pretty_name: "Rocky Linux 9.2"
     group: rocky
 ...
