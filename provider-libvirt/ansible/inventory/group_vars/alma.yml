@@ -1,0 +1,7 @@
+---
+server:
+    distribution: "alma"
+    version: "9.2"
+    pretty_name: "Alma Linux 9.2"
+    group: alma
+...

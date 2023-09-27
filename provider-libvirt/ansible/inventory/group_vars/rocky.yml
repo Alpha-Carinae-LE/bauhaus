@@ -1,7 +1,0 @@
----
-server:
-    distribution: "rocky"
-    version: "9.2"
-    pretty_name: "Rocky Linux 9.2"
-    group: rocky
-...

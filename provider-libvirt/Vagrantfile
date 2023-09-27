@@ -7,18 +7,18 @@ ENV["LC_ALL"] = "en_US.UTF-8"
 # DELETE OR ADD FURTHER ENTRIES DOWN BELOW
 # AND CHANGE IPs & HOSTNAMES, IF NEEDED
 boxes = [
-    {
-        :name => "calvin",
-        :cpus => "2",
-        :memory => "4096",
-        :address => "192.168.56.21"
-    },
-    {
-        :name => "hobbes",
-        :cpus => "2",
-        :memory => "4096",
-        :address => "192.168.56.22"
-    }
+  {
+    :name => "calvin",
+    :cpus => "2",
+    :memory => "4096",
+    :address => "192.168.56.31"
+  },
+  {
+    :name => "hobbes",
+    :cpus => "2",
+    :memory => "4096",
+    :address => "192.168.56.32"
+  }
 ]
 
 Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
@@ -28,7 +28,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
     config.vm.define vars[:name] do |machine|
       machine.vm.hostname = vars[:name]
       machine.vm.provider "libvirt" do |lbv|
-        lbv.driver = "qemu"
+        lbv.driver = "kvm"
         lbv.memory = vars[:memory]
         lbv.cpus = vars[:cpus]
       end
