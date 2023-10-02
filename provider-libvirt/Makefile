@@ -26,7 +26,7 @@ vf-debian:
 
 .PHONY: vf-ubuntu
 vf-ubuntu:
-	@./bin/create-vagrantfile.sh --jammy
+	@./bin/create-vagrantfile.sh --ubuntu
 
 ##########################################
 #
@@ -128,21 +128,17 @@ vm-snapshot-list:
 	@vagrant snapshot list
 
 .PHONY: vm-forget
-vm-forget: alma-forget alpine-forget arch-forget debian-forget jammy-forget
+vm-forget: alma-forget alpine-forget arch-forget debian-forget ubuntu-forget
 
 .PHONY: alma-forget
 alma-forget:
 	@ssh-keygen -f "${USER_DIR}/.ssh/known_hosts" -R "192.168.56.11"
 	@ssh-keygen -f "${USER_DIR}/.ssh/known_hosts" -R "192.168.56.12"
-	@ssh-keygen -f "${USER_DIR}/.ssh/known_hosts" -R "192.168.56.13"
-	@ssh-keygen -f "${USER_DIR}/.ssh/known_hosts" -R "192.168.56.14"
 
 .PHONY: alpine-forget
 alpine-forget:
 	@ssh-keygen -f "${USER_DIR}/.ssh/known_hosts" -R "192.168.56.21"
 	@ssh-keygen -f "${USER_DIR}/.ssh/known_hosts" -R "192.168.56.22"
-	@ssh-keygen -f "${USER_DIR}/.ssh/known_hosts" -R "192.168.56.23"
-	@ssh-keygen -f "${USER_DIR}/.ssh/known_hosts" -R "192.168.56.24"
 
 .PHONY: arch-forget
 arch-forget:
@@ -153,15 +149,11 @@ arch-forget:
 debian-forget:
 	@ssh-keygen -f "${USER_DIR}/.ssh/known_hosts" -R "192.168.56.41"
 	@ssh-keygen -f "${USER_DIR}/.ssh/known_hosts" -R "192.168.56.42"
-	@ssh-keygen -f "${USER_DIR}/.ssh/known_hosts" -R "192.168.56.43"
-	@ssh-keygen -f "${USER_DIR}/.ssh/known_hosts" -R "192.168.56.44"
 
-.PHONY: jammy-forget
-jammy-forget:
+.PHONY: ubuntu-forget
+ubuntu-forget:
 	@ssh-keygen -f "${USER_DIR}/.ssh/known_hosts" -R "192.168.56.51"
 	@ssh-keygen -f "${USER_DIR}/.ssh/known_hosts" -R "192.168.56.52"
-	@ssh-keygen -f "${USER_DIR}/.ssh/known_hosts" -R "192.168.56.53"
-	@ssh-keygen -f "${USER_DIR}/.ssh/known_hosts" -R "192.168.56.54"
 
 ##########################################
 #
@@ -180,8 +172,8 @@ arch-init: vf-arch vm-up
 .PHONY: deb-init
 deb-init: vf-debian vm-up
 
-.PHONY: jammy-init
-jammy-init: vf-ubuntu vm-up
+.PHONY: ubuntu-init
+ubuntu-init: vf-ubuntu vm-up
 
 .PHONY: alma-term
 alma-term: vf-alma alma-forget vm-destroy
@@ -195,8 +187,8 @@ arch-term: vf-arch arch-forget vm-destroy
 .PHONY: deb-term
 deb-term: vf-debian debian-forget vm-destroy
 
-.PHONY: jammy-term
-jammy-term: vf-ubuntu jammy-forget vm-destroy
+.PHONY: ubuntu-term
+ubuntu-term: vf-ubuntu ubuntu-forget vm-destroy
 
 ##########################################
 #

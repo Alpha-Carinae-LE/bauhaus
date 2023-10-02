@@ -5,11 +5,11 @@
 # GLOBAL VARIABLES
 #
 ##########################################
+ALMA_FLAG="--alma"
 ALPINE_FLAG="--alpine"
 ARCH_FLAG="--arch"
 DEBIAN_FLAG="--debian"
-ALMA_FLAG="--alma"
-UBUNTU_FLAG="--jammy"
+UBUNTU_FLAG="--ubuntu"
 
 ##########################################
 #
@@ -29,28 +29,16 @@ ENV["LC_ALL"] = "en_US.UTF-8"
 # AND CHANGE IPs & HOSTNAMES, IF NEEDED
 boxes = [
   {
-    :name => "balboa",
-    :cpus => "1",
-    :memory => "2048",
+    :name => "majima",
+    :cpus => "2",
+    :memory => "4096",
     :address => "192.168.56.11"
   },
   {
-    :name => "creed",
-    :cpus => "1",
-    :memory => "2048",
+    :name => "kiryu",
+    :cpus => "2",
+    :memory => "4096",
     :address => "192.168.56.12"
-  },
-  {
-    :name => "clang",
-    :cpus => "1",
-    :memory => "2048",
-    :address => "192.168.56.13"
-  },
-  {
-    :name => "drago",
-    :cpus => "1",
-    :memory => "2048",
-    :address => "192.168.56.14"
   }
 ]
 
@@ -90,28 +78,16 @@ ENV["LC_ALL"] = "en_US.UTF-8"
 # AND CHANGE IPs & HOSTNAMES, IF NEEDED
 boxes = [
   {
-    :name => "federer",
-    :cpus => "1",
-    :memory => "2048",
+    :name => "shepard",
+    :cpus => "2",
+    :memory => "4096",
     :address => "192.168.56.21"
   },
   {
-    :name => "nadal",
-    :cpus => "1",
-    :memory => "2048",
+    :name => "vakarian",
+    :cpus => "2",
+    :memory => "4096",
     :address => "192.168.56.22"
-  },
-  {
-    :name => "djokovic",
-    :cpus => "1",
-    :memory => "2048",
-    :address => "192.168.56.23"
-  },
-  {
-    :name => "murray",
-    :cpus => "1",
-    :memory => "2048",
-    :address => "192.168.56.24"
   }
 ]
 
@@ -202,28 +178,16 @@ ENV["LC_ALL"] = "en_US.UTF-8"
 # AND CHANGE IPs & HOSTNAMES, IF NEEDED
 boxes = [
   {
-    :name => "blinky",
-    :cpus => "1",
-    :memory => "2048",
+    :name => "snoopy",
+    :cpus => "2",
+    :memory => "4096",
     :address => "192.168.56.41"
   },
   {
-    :name => "pinky",
-    :cpus => "1",
-    :memory => "2048",
+    :name => "woodstock",
+    :cpus => "2",
+    :memory => "4096",
     :address => "192.168.56.42"
-  },
-  {
-    :name => "inky",
-    :cpus => "1",
-    :memory => "2048",
-    :address => "192.168.56.43"
-  },
-  {
-    :name => "clyde",
-    :cpus => "1",
-    :memory => "2048",
-    :address => "192.168.56.44"
   }
 ]
 
@@ -263,28 +227,16 @@ ENV["LC_ALL"] = "en_US.UTF-8"
 # AND CHANGE IPs & HOSTNAMES, IF NEEDED
 boxes = [
   {
-    :name => "leonardo",
-    :cpus => "1",
-    :memory => "2048",
+    :name => "mario",
+    :cpus => "2",
+    :memory => "4096",
     :address => "192.168.56.51"
   },
   {
-    :name => "raphael",
-    :cpus => "1",
-    :memory => "2048",
+    :name => "luigi",
+    :cpus => "2",
+    :memory => "4096",
     :address => "192.168.56.52"
-  },
-  {
-    :name => "donatello",
-    :cpus => "1",
-    :memory => "2048",
-    :address => "192.168.56.53"
-  },
-  {
-    :name => "michelangelo",
-    :cpus => "1",
-    :memory => "2048",
-    :address => "192.168.56.54"
   }
 ]
 
