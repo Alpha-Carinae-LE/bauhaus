@@ -5,12 +5,14 @@
     recurse: yes
     state: directory
     owner: "{{ ansible_user }}"
+    group: "{{ ansible_user }}"
 
 - name: Copy Custom Fact
   copy:
     src: "{{ playbook_dir }}/facts.d/getprettyname.fact"
     dest: /home/{{ ansible_user }}/facts.d/getprettyname.fact
     owner: "{{ ansible_user }}"
+    group: "{{ ansible_user }}"
     mode: '0755'
 
 - name: Reload Facts
