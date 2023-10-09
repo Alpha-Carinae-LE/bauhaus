@@ -11,7 +11,7 @@
     src: "{{ playbook_dir }}/facts.d/getprettyname.fact"
     dest: /home/{{ ansible_user }}/facts.d/getprettyname.fact
     owner: "{{ ansible_user }}"
-    mode: 0755
+    mode: '0755'
 
 - name: Reload Facts
   setup:

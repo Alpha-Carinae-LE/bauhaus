@@ -5,6 +5,6 @@
     - kewlfft.aur
   tasks:
     - name: Gather Custom Facts
-      include_role:
+      ansible.builtin.include_role:
         name: common
 ...
