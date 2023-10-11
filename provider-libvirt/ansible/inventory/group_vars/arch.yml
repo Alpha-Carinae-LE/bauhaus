@@ -4,4 +4,3 @@ server:
     version: "rolling"
     pretty_name: "Arch Linux"
     group: arch
-...

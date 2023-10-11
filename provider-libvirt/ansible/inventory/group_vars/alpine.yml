@@ -4,4 +4,3 @@ server:
     version: "3.8.5"
     pretty_name: "Alpine Linux v3.8.5"
     group: alpine
-...

@@ -61,4 +61,3 @@
     name: aur_builder
     state: absent
     remove: yes
-...

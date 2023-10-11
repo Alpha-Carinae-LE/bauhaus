@@ -4,4 +4,3 @@
 
 - name: Install distribution-specific packages
   ansible.builtin.include_tasks: "{{ server.distribution }}/main.yml"
-...

@@ -25,4 +25,3 @@
       - docker-compose
     state: present
   become: true
-...

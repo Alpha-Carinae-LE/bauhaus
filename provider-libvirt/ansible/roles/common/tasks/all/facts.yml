@@ -26,4 +26,3 @@
 - name: Show Custom Fact
   debug:
     msg: "{{ ansible_local.getprettyname.pretty_name }}"
-...
