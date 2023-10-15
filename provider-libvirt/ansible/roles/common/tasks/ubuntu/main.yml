@@ -1,7 +1,7 @@
 ---
 - name: Update cache
   apt:
-    update_cache: yes
+    update_cache: true
     cache_valid_time: 3600
   become: true
 
@@ -48,6 +48,6 @@
       - gnome-mahjongg
       - gnome-mines
     state: absent
-    autoremove: yes
-    purge: yes
+    autoremove: true
+    purge: true
   become: true

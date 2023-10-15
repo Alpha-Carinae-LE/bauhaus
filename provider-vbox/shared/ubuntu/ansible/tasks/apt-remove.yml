@@ -25,5 +25,5 @@
       - gnome-mahjongg
       - gnome-mines
     state: absent
-    autoremove: yes
-    purge: yes
+    autoremove: true
+    purge: true
