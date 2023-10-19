@@ -36,7 +36,7 @@ vf-ubuntu:
 .PHONY: vm-box-add
 vm-box-add:
 	@vagrant box add generic/alma9  --provider=libvirt --force --clean
-	@vagrant box add generic/alpine38 --provider=libvirt --force --clean
+	@vagrant box add generic/alpine318 --provider=libvirt --force --clean
 	@vagrant box add generic/arch --provider=libvirt --force --clean
 	@vagrant box add generic/debian11 --provider=libvirt --force --clean
 	@vagrant box add bento/ubuntu-22.04 --provider=libvirt --force  --clean
@@ -52,7 +52,7 @@ vm-box-list:
 .PHONY: vm-box-nuke
 vm-box-nuke:
 	@vagrant box remove generic/alma9  --provider=libvirt --force --all
-	@vagrant box remove generic/alpine38 --provider=libvirt --force --all
+	@vagrant box remove generic/alpine318 --provider=libvirt --force --all
 	@vagrant box remove generic/arch --provider=libvirt --force --all
 	@vagrant box remove generic/debian11 --provider=libvirt --force --all
 	@vagrant box remove bento/ubuntu-22.04 --provider=libvirt --force  --all
