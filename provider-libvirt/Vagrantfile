@@ -8,21 +8,21 @@ ENV["LC_ALL"] = "en_US.UTF-8"
 # AND CHANGE IPs & HOSTNAMES, IF NEEDED
 boxes = [
   {
-    :name => "shepard",
+    :name => "majima",
     :cpus => "2",
     :memory => "4096",
-    :address => "192.168.56.21"
+    :address => "192.168.56.11"
   },
   {
-    :name => "vakarian",
+    :name => "kiryu",
     :cpus => "2",
     :memory => "4096",
-    :address => "192.168.56.22"
+    :address => "192.168.56.12"
   }
 ]
 
 Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
-  config.vm.box = "generic/alpine318"
+  config.vm.box = "generic/alma9"
   config.ssh.forward_agent = true
   boxes.each do |vars|
     config.vm.define vars[:name] do |machine|
@@ -36,7 +36,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
       machine.vm.synced_folder ".", "/vagrant", disabled: true
       machine.vm.provision "file", source: "./certificates/ansible_ssh.pub", destination: "~/ansible_ssh.pub"
       machine.vm.provision "shell", path: "./bin/install-certificate.sh"
-      machine.vm.provision "shell", path: "./bin/packages-apk.sh"
+      machine.vm.provision "shell", path: "./bin/packages-dnf.sh"
     end
   end
 end
